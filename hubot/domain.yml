@@ -9,6 +9,12 @@ intents:
   - ajuda_criar_hu
   - nao_criar_hu
   - criar_hu
+  - perguntar_sobre_hu
+  - perguntar_exemplo_hu
+  - perguntar_criterio_aceitacao
+  - perguntar_persona_hu
+  - perguntar_motivo_hu
+  - perguntar_objetivo_hu
 
 entities:
   - tipo_usuario
@@ -139,6 +145,68 @@ responses:
           payload: "/criar_hu"
         - title: "Não"
           payload: "/nao_criar_hu"
+  
+  utter_explicar_hu:
+    - text: |
+        As Histórias de Usuário são uma técnica ágil usada para descrever requisitos de software do ponto de vista do usuário. Elas são curtas, geralmente seguem o formato: 
+        "Como [tipo de usuário], eu quero [um objetivo] para [um motivo]".
+        A importância das Histórias de Usuário está no fato de que elas ajudam a equipe de desenvolvimento a entender o que é realmente necessário para o usuário, priorizando funcionalidades que agregam valor e focando na entrega de valor de negócio.
+
+  utter_exemplo_hu:
+    - text: |
+        Um exemplo de História de Usuário bem formulada seria:
+        "Como um usuário de e-commerce, eu quero ser capaz de visualizar os produtos no meu carrinho de compras para verificar o que selecionei antes de finalizar a compra."
+
+        O que torna essa HU eficiente:
+        1. **Clareza**: Ela especifica claramente o tipo de usuário (usuário de e-commerce) e a ação desejada (visualizar produtos no carrinho).
+        2. **Foco no valor**: O benefício para o usuário é claramente mencionado (verificar o que foi selecionado antes de finalizar a compra).
+        3. **Simples e concisa**: A HU é curta e objetiva, facilitando o entendimento da equipe de desenvolvimento.
+        4. **Testável**: Pode ser facilmente validada durante a fase de testes, garantindo que a funcionalidade atende ao objetivo descrito.
+
+  utter_criterio_aceitacao:
+    - text: |
+        Um critério de aceitação é uma condição específica que deve ser atendida para que uma História de Usuário seja considerada completa. Eles ajudam a definir os limites e as expectativas de uma funcionalidade, garantindo que ela atenda aos requisitos do usuário. Os critérios de aceitação são geralmente redigidos de maneira clara e objetiva, e podem incluir aspectos como funcionalidade, desempenho, segurança, e usabilidade. Eles servem como base para testes e validação do que foi implementado.
+        Aqui estão alguns exemplos de critérios de aceitação:
+        
+        1. **Critério de aceitação para um formulário de login**:
+           - O sistema deve permitir que o usuário faça login com um endereço de e-mail e senha válidos.
+           - Se as credenciais estiverem incorretas, uma mensagem de erro deve ser exibida.
+
+        2. **Critério de aceitação para um carrinho de compras**:
+           - O usuário deve poder adicionar e remover produtos do carrinho.
+           - O valor total do carrinho deve ser atualizado automaticamente após cada alteração.
+
+        Esses critérios servem como base para testes e validação do que foi implementado, assegurando que a funcionalidade atenda às expectativas do usuário.
+
+  utter_persona_hu:
+    - text: |
+        Uma "persona" em Histórias de Usuário é uma representação fictícia e detalhada de um usuário típico que usará o produto ou serviço. As personas são criadas com base em pesquisas e dados reais sobre os usuários, incluindo informações demográficas, comportamentais, motivações e necessidades.
+
+        Elas ajudam a equipe de desenvolvimento a entender melhor quem são os usuários, permitindo que as HUs sejam mais direcionadas e relevantes. A definição de personas facilita a priorização das funcionalidades que realmente agregam valor aos usuários, garantindo que o desenvolvimento esteja alinhado com as expectativas e necessidades do público-alvo.
+
+  utter_motivo_hu:
+    - text: |
+        O "motivo" de uma História de Usuário (HU) é a razão pela qual a funcionalidade é importante para o usuário. Ele geralmente é colocado na estrutura da HU como "para que [motivo]", ajudando a esclarecer o valor e o impacto da funcionalidade proposta.
+
+        A estrutura típica de uma HU é:
+        "Como [tipo de usuário], quero [objetivo] para que [motivo]."
+
+        Por exemplo:
+        - "Como um usuário de e-commerce, quero poder rastrear meu pedido para que eu possa saber quando ele chegará."
+        
+        Neste exemplo, o motivo é "para que eu possa saber quando ele chegará", o que explica a importância da funcionalidade para o usuário. O motivo ajuda a equipe de desenvolvimento a entender melhor as necessidades do usuário e a priorizar as funcionalidades que realmente agregam valor.
+
+  utter_objetivo_hu:
+    - text: |
+        O "objetivo" de uma História de Usuário (HU) refere-se à ação ou funcionalidade que o usuário deseja realizar. Ele é central para a HU e deve descrever de forma clara e concisa o que o usuário quer alcançar com a funcionalidade.
+
+        A estrutura típica de uma HU é:
+        "Como [tipo de usuário], quero [objetivo] para que [motivo]."
+
+        Por exemplo:
+        - "Como um usuário de e-commerce, quero adicionar produtos ao meu carrinho para que eu possa comprá-los mais tarde."
+
+        Neste exemplo, o objetivo é "adicionar produtos ao meu carrinho", que expressa diretamente a ação que o usuário deseja realizar. O objetivo é fundamental para guiar o desenvolvimento, garantindo que a equipe compreenda exatamente o que precisa ser implementado.
 
 session_config:
   session_expiration_time: 60

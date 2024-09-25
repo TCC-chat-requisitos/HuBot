@@ -126,3 +126,65 @@ nlu:
 
 # - intent: confirmar_hu
 #   examples:
+
+# intents para responder dúvidas sobre histórias de usuário
+- intent: perguntar_sobre_hu
+  examples: |
+        - O que é uma User Story?
+        - O que é uma história de usuário?
+        - Pode explicar o conceito de User Story?
+        - Pode explicar o conceito de história de usuário?
+        - Me fale sobre User Stories.
+        - Me fale sobre histórias de usuário.
+        - O que são histórias de usuário?
+        - O que são User Stories?
+        - Qual a definição de User Stories?
+        - Qual a definição de histórias de usuário?
+
+- intent: perguntar_exemplo_hu
+  examples: |
+    - Pode me dar um exemplo de uma boa História de Usuário?
+    - Qual seria uma História de Usuário bem escrita?
+    - Me mostre um exemplo de HU bem formulada.
+    - Quais são exemplos de HUs eficientes?
+    - Pode mostrar uma HU bem escrita com explicação?
+    - Qual é um bom exemplo de História de Usuário?
+    - Exemplos de boas Histórias de Usuário?
+    - Como seria uma HU bem formulada?
+
+- intent: perguntar_criterio_aceitacao
+  examples: |
+    - O que é um critério de aceitação?
+    - Pode explicar o que são critérios de aceitação?
+    - Qual a importância dos critérios de aceitação?
+    - Como são definidos os critérios de aceitação?
+    - O que deve conter em um critério de aceitação?
+    - Quais são exemplos de critérios de aceitação?
+    - Por que precisamos de critérios de aceitação em uma HU?
+
+- intent: perguntar_persona_hu
+  examples: |
+    - O que é uma persona em uma História de Usuário?
+    - Pode explicar o conceito de persona?
+    - Qual a importância das personas em HUs?
+    - Como as personas são usadas no desenvolvimento de software?
+    - O que deve conter em uma persona?
+    - Como criar uma persona para uma História de Usuário?
+
+- intent: perguntar_motivo_hu
+  examples: |
+    - O que é o motivo de uma História de Usuário?
+    - Pode explicar qual é a função do motivo em uma HU?
+    - Qual a importância do motivo em uma História de Usuário?
+    - Como é definido o motivo em uma HU?
+    - O que deve conter no motivo de uma História de Usuário?
+    - Por que o motivo é importante na estrutura de uma HU?
+
+- intent: perguntar_objetivo_hu
+  examples: |
+    - O que é o objetivo de uma História de Usuário?
+    - Pode explicar qual é a função do objetivo em uma HU?
+    - Qual a importância do objetivo em uma História de Usuário?
+    - Como é definido o objetivo em uma HU?
+    - O que deve conter no objetivo de uma História de Usuário?
+    - Por que o objetivo é importante na estrutura de uma HU?
