@@ -1,0 +1,62 @@
+version: "3.1"
+
+nlu:
+# intents para cumprimentos, despedidas e agradecimentos
+
+- intent: saudacao
+  examples: |
+    - Olá
+    - Oi
+    - Bom dia
+    - Boa tarde
+    - Boa noite
+    - E aí
+
+- intent: saudacao_tudo_bem
+  examples: |
+    - E aí, beleza?
+    - E aí, tudo bem?
+    - E aí, como vai?
+    - E aí, como você está?
+    - E aí, como você está se sentindo?
+    - Olá, tudo bem?
+    - Olá, como vai?
+    - Oi, tudo bem?
+    - Oi como vai?
+
+- intent: despedida
+  examples: |
+    - Tchau
+    - Até mais
+    - Até logo
+    - Adeus
+    - Tenha um bom dia
+    - Tenha uma boa tarde
+    - Tenha uma boa noite
+    - Tenha um bom final de semana
+    - Tenha uma boa semana
+    - Tenha um bom feriado
+    - Tenha um bom descanso
+    - Tenha um bom trabalho
+    - Obrigado, tchau
+    - Obrigada, tchau
+    - Obrigado, até mais
+    - Obrigada, até mais
+    - Obrigado, até logo
+    - Valeu, até mais
+    - Valeu, até logo
+    - Obrigado, tenha um bom dia
+
+- intent: agradecimento
+  examples: |
+    - Obrigado
+    - Obrigada
+    - Valeu
+    - Muito obrigado
+    - Muito obrigada
+    - Obrigado pela ajuda
+    - Obrigada pela ajuda
+    - Obrigado pela informação
+    - Obrigada pela informação
+    - Obrigado pela atenção
+

@@ -1,0 +1,38 @@
+version: "3.1"
+
+intents:
+  - saudacao
+  - despedida
+  - agradecimento
+  - saudacao_tudo_bem
+
+responses:
+  utter_saudacao:
+    - text: "Oiie, Hubot na área! Como posso te ajudar? 😃"
+    - text: "Olá! Como posso ajudar você?"
+    - text: "Oi! Como posso ajudar você?"
+    - text: "Oi, eu sou o Hubot! Como posso te ajudar? 👋"
+
+  utter_saudacao_tudo_bem:
+    - text: "E aí, tudo bem! Como posso ajudar você?"
+    - text: "E aí, beleza! Como posso ajudar você?"
+    - text: "E aí, como vai! Como posso ajudar você?"
+    - text: "E aí, como você está! Como posso ajudar você?"
+
+  utter_despedida:
+    - text: "Até mais!"
+    - text: "Até logo! Qualquer dúvida sobre Histórias de Usuário pode contar comigo! 😉"
+    - text: "Tchau! Se precisar de ajuda, estou por aqui! 😉"
+    - text: "Até mais! Se precisar de ajuda, estou por aqui! 😉"
+    - text: "Falouuu, até mais! 😃"
+
+  utter_agradecimento:
+    - text: "De nada! Estou aqui para ajudar você! 🤝"
+    - text: "Por nada! Estou aqui para ajudar você! 🤝"
+    - text: "Disponha! Estou aqui para ajudar você! 😃"
+    - text: "Imagina! Estou aqui para ajudar você! 😉"
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
