@@ -21,3 +21,29 @@ stories:
   steps:
     - intent: agradecimento
     - action: utter_agradecimento
+
+- story: quem_sou
+  steps:
+    - intent: quem_sou
+    - action: utter_quem_sou
+
+- story: ajuda_criar_hu
+  steps:
+    - intent: ajuda_criar_hu
+    - action: utter_ajuda_criar_hu
+
+- story: nao_criar_hu
+  steps:
+    - intent: nao_criar_hu
+    - action: utter_nao_criar_hu
+
+# - story: criar_hu
+#   steps:
+#     - intent: criar_hu
+#     - action: utter_criar_hu
+
+# - story: coletar_dados_hu
+#   steps:
+#     - intent: criar_hu
+#     - action: criar_hu_form
+#     - active_loop: criar_hu_form

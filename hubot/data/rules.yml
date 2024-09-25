@@ -1,3 +1,35 @@
 version: "3.1"
 
 rules:
+  - rule: ativar formulario de historia
+    steps:
+      - intent: criar_hu
+      - action: utter_criar_hu
+
+      - action: tipo_usuario_form
+      - active_loop: tipo_usuario_form
+      - slot_was_set:
+        - requested_slot: tipo_usuario
+      - active_loop: null
+      
+      - action: objetivo_usuario_form
+      - active_loop: objetivo_usuario_form
+      - slot_was_set:
+        - requested_slot: objetivo_usuario
+      - active_loop: null
+
+      - action: motivo_usuario_form
+      - active_loop: motivo_usuario_form
+      - slot_was_set:
+        - requested_slot: motivo_usuario
+      - active_loop: null
+
+      - action: utter_confirma_hu
+
+  # - rule: desativar formulario quando completo
+  #   condition:
+  #     - active_loop: criar_hu_form
+  #   steps:
+  #     - action: criar_hu_form
+  #     - active_loop: null
+  #     - action: utter_confirma_hu

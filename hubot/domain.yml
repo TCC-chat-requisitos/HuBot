@@ -5,6 +5,54 @@ intents:
   - despedida
   - agradecimento
   - saudacao_tudo_bem
+  - quem_sou
+  - ajuda_criar_hu
+  - nao_criar_hu
+  - criar_hu
+
+entities:
+  - tipo_usuario
+  - objetivo_usuario
+  - motivo_usuario
+
+slots:
+  tipo_usuario:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+        conditions:
+        - active_loop: tipo_usuario_form
+          requested_slot: tipo_usuario
+
+  objetivo_usuario:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+        conditions:
+        - active_loop: objetivo_usuario_form
+          requested_slot: objetivo_usuario
+
+  motivo_usuario:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+        conditions:
+        - active_loop: motivo_usuario_form
+          requested_slot: motivo_usuario
+
+forms:
+  tipo_usuario_form:
+    required_slots:
+      - tipo_usuario
+  objetivo_usuario_form:
+    required_slots:
+      - objetivo_usuario
+  motivo_usuario_form:
+    required_slots:
+      - motivo_usuario
 
 responses:
   utter_saudacao:
@@ -32,6 +80,65 @@ responses:
     - text: "Disponha! Estou aqui para ajudar você! 😃"
     - text: "Imagina! Estou aqui para ajudar você! 😉"
 
+  utter_quem_sou:
+    - text: "Eu sou o Hubot, um chatbot desenvolvido para ajudar você a entender um pouco mais sobre Histórias de Usuário, além disso posso te ajudar a criar histórias de usuário e avaliá-las 😃"
+
+  utter_ajuda_criar_hu:
+    - text: | 
+        Claro! Para criar uma História de Usuário, você precisa seguir o seguinte padrão: 
+        - Como [tipo de usuário], quero [objetivo] para que [motivo].
+        
+        Por exemplo: 
+        - Como cliente de um banco online, quero acessar meu extrato bancário de forma rápida e segura pelo aplicativo móvel, para poder monitorar minhas transações financeiras a qualquer momento.
+
+        Deseja criar uma história de usuário?
+      buttons:
+        - title: "Sim"
+          payload: "/criar_hu"
+        - title: "Não"
+          payload: "/nao_criar_hu"
+
+  utter_nao_criar_hu:
+    - text: "Sem problemas! Se precisar de ajuda, estou por aqui! 😉"
+    - text: "Tudo bem! Se precisar de ajuda, estou por aqui! 😉"
+    - text: "Ok! Se precisar de ajuda, estou por aqui! 😉"
+
+  utter_criar_hu:
+    - text: |
+        Ótimo! Vamos criar uma História de Usuário juntos! 🚀
+        Primeiro vamos definir o tipo de usuário. Um tipo de usuário é uma descrição de um papel ou perfil de usuário que interage com o sistema. Exemplos: cliente, administrador, visitante, etc.
+
+        Digite o tipo de usuário:
+
+  # utter_ask_tipo_usuario:
+  #   - text: |
+  #       Um tipo de usuário é uma descrição de um papel ou perfil de usuário que interage com o sistema. Exemplos: cliente, administrador, visitante, etc.
+
+  #       Digite o tipo de usuário:
+
+  utter_ask_objetivo_usuario:
+    - text: |
+        Perfeito! Agora vamos definir o objetivo do usuário. O objetivo é o que o usuário deseja alcançar ao interagir com o sistema. Exemplos: acessar, visualizar, editar, excluir, ou até mesmo frases mais complexas como: "quero acessar meu extrato bancário de forma rápida e segura pelo aplicativo móvel".
+
+        Digite o objetivo do usuário:
+
+  utter_ask_motivo_usuario:
+    - text: |
+        Excelente! Agora vamos definir o motivo do usuário. O motivo é a razão pela qual o usuário deseja alcançar o objetivo. Exemplos: monitorar, gerenciar, controlar, ou até mesmo frases mais complexas como: "para poder monitorar minhas transações financeiras a qualquer momento.".
+
+        Digite o motivo do usuário:
+
+  utter_confirma_hu:
+    - text: |
+        Ótimo! A História de Usuário foi criada com sucesso! 🎉
+        - Como {tipo_usuario}, quero {objetivo} para que {motivo}.
+
+        Deseja criar outra História de Usuário?
+      buttons:
+        - title: "Sim"
+          payload: "/criar_hu"
+        - title: "Não"
+          payload: "/nao_criar_hu"
 
 session_config:
   session_expiration_time: 60

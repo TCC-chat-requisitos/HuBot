@@ -60,3 +60,69 @@ nlu:
     - Obrigada pela informação
     - Obrigado pela atenção
 
+- intent: quem_sou
+  examples: |
+    - O que você sabe fazer?
+    - O que você faz?
+    - O que você é?
+    - O que você pode fazer?
+    - O que vc faz?
+    - O que vc é?
+    - O que vc pode fazer?
+    - O que você sabe fazer?
+    - Qm é vc?
+    - Qm é você?
+    - Me fale um pouco sobre você
+    - Me fale sobre você
+    - Me fale sobre vc
+    - Me fale o que você é
+    - Como você pode me ajudar?
+    - Como vc pode me ajudar?
+    - O que vc é capaz de fazer?
+    - gostaria de saber oq vc faz
+    - gostaria de saber oq vc é
+    - gostaria de saber oq vc pode fazer
+    - gostaria de saber oq vc sabe fazer
+
+# intents para criar histórias de usuário
+
+- intent: ajuda_criar_hu
+  examples: |
+    - Como criar uma história de usuário?
+    - Como criar uma HU?
+    - Como criar uma história
+
+- intent: criar_hu
+  examples: |
+    - Pode me ajudar a criar uma história de usuário?
+    - Pode me ajudar a criar uma HU?
+    - Pode me ajudar a criar uma história
+    - Me ajuda a criar uma história de usuário?
+    - Me ajuda a criar uma HU?
+    - Me ajuda a criar uma história
+    - Me ajude a criar uma história
+    - Me ajude a criar uma HU
+    - Me ajude a fazer uma história
+    - Me ajude a fazer uma HU
+    - Me ajude a fazer uma história de usuário
+    - Consegue me ajudar a criar uma história de usuário?
+    - Consegue me ajudar a criar uma HU?
+    - Como faço para criar uma hu?
+    - quero criar uma hu
+    - quero criar uma história de usuário
+    - quero criar uma história
+    - quero fazer uma história de usuário
+    - quero fazer uma HU
+    - quero fazer uma história
+    - gostaria de criar uma história de usuário
+    - gostaria de criar uma HU
+    - quero criar um hu
+
+- intent: nao_criar_hu
+  examples: |
+    - Não quero criar uma história de usuário
+    - Não quero criar uma HU
+    - Não quero criar uma história
+
+# - intent: confirmar_hu
+#   examples:
