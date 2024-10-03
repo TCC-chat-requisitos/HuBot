@@ -37,6 +37,38 @@ stories:
     - intent: nao_criar_hu
     - action: utter_nao_criar_hu
 
+# Stories para responder dúvidas sobre histórias de usuário
+
+- story: Explicar Histórias de Usuário
+  steps:
+    - intent: perguntar_sobre_hu
+    - action: utter_explicar_hu
+
+- story: Exemplo de História de Usuário bem formulada
+  steps:
+    - intent: perguntar_exemplo_hu
+    - action: utter_exemplo_hu
+
+- story: O que é um critério de aceitação
+  steps:
+    - intent: perguntar_criterio_aceitacao
+    - action: utter_criterio_aceitacao
+
+- story: O que é uma persona em HU
+  steps:
+    - intent: perguntar_persona_hu
+    - action: utter_persona_hu
+
+- story: O que é o motivo de uma HU
+  steps:
+    - intent: perguntar_motivo_hu
+    - action: utter_motivo_hu
+
+- story: O que é o objetivo de uma HU
+  steps:
+    - intent: perguntar_objetivo_hu
+    - action: utter_objetivo_hu
+
 # - story: criar_hu
 #   steps:
 #     - intent: criar_hu
