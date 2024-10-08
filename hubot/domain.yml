@@ -15,6 +15,7 @@ intents:
   - perguntar_persona_hu
   - perguntar_motivo_hu
   - perguntar_objetivo_hu
+  - menu_acoes
 
 entities:
   - tipo_usuario
@@ -207,6 +208,26 @@ responses:
         - "Como um usuário de e-commerce, quero adicionar produtos ao meu carrinho para que eu possa comprá-los mais tarde."
 
         Neste exemplo, o objetivo é "adicionar produtos ao meu carrinho", que expressa diretamente a ação que o usuário deseja realizar. O objetivo é fundamental para guiar o desenvolvimento, garantindo que a equipe compreenda exatamente o que precisa ser implementado.
+  
+  utter_menu_acoes:
+    - text: "O chatbot suporta as seguintes ações. Por favor, selecione uma para saber mais:"
+      buttons:
+        - title: "Quem sou"
+          payload: 'Me fale um pouco sobre você'
+        - title: "Ajuda sobre Histórias de Usuário"
+          payload: 'Como criar uma história de usuário?'
+        - title: "Criar História de Usuário"
+          payload: 'Gostaria de criar uma história de usuário'
+        - title: "Exemplo de Histórias de Usuário"
+          payload: 'Qual é um bom exemplo de História de Usuário?'
+        - title: "Critérios de aceitação"
+          payload: 'O que é um critério de aceitação?'
+        - title: "Persona"
+          payload: 'O que é uma persona em uma História de Usuário?'
+        - title: "Motivo de uma História de Usuário"
+          payload: 'O que é o motivo de uma História de Usuário?'
+        - title: "Objetivo de uma HU"
+          payload: 'O que é o objetivo de uma História de Usuário?'
 
 session_config:
   session_expiration_time: 60
