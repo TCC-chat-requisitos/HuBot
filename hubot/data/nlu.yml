@@ -188,3 +188,12 @@ nlu:
     - Como é definido o objetivo em uma HU?
     - O que deve conter no objetivo de uma História de Usuário?
     - Por que o objetivo é importante na estrutura de uma HU?
+
+- intent: menu_acoes
+  examples: |
+    - Você possui um menu?
+    - Abrir menu de opções
+    - Quais são as opções disponíveis
+    - Você pode listar suas ações
+    - Listar ações
+    - O que você pode fazer?

@@ -69,6 +69,11 @@ stories:
     - intent: perguntar_objetivo_hu
     - action: utter_objetivo_hu
 
+- story: Menu de ações
+  steps:
+    - intent: menu_acoes
+    - action: utter_menu_acoes
+
 # - story: criar_hu
 #   steps:
 #     - intent: criar_hu
