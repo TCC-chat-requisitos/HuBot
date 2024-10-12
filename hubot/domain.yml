@@ -137,7 +137,7 @@ responses:
   utter_confirma_hu:
     - text: |
         Ótimo! A História de Usuário foi criada com sucesso! 🎉
-        - Como {tipo_usuario}, quero {objetivo} para que {motivo}.
+        - Como {tipo_usuario}, quero {objetivo_usuario} para que {motivo_usuario}.
 
         Deseja criar outra História de Usuário?
       buttons:
