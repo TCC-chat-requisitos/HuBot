@@ -24,6 +24,13 @@ rules:
         - requested_slot: motivo_usuario
       - active_loop: null
 
+      - action: criterios_aceitacao_form
+      - active_loop: criterios_aceitacao_form
+      - slot_was_set:
+        - requested_slot: criterios_aceitacao
+      - active_loop: null
+
+      - action: action_mostra_hu
       - action: utter_confirma_hu
 
   # - rule: desativar formulario quando completo

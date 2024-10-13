@@ -1,5 +1,8 @@
 version: "3.1"
 
+actions:
+  - action_mostra_hu
+
 intents:
   - saudacao
   - despedida
@@ -21,6 +24,7 @@ entities:
   - tipo_usuario
   - objetivo_usuario
   - motivo_usuario
+  - criterios_aceitacao
 
 slots:
   tipo_usuario:
@@ -50,6 +54,15 @@ slots:
         - active_loop: motivo_usuario_form
           requested_slot: motivo_usuario
 
+  criterios_aceitacao:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+        conditions:
+        - active_loop: criterios_aceitacao_form
+          requested_slot: criterios_aceitacao
+
 forms:
   tipo_usuario_form:
     required_slots:
@@ -60,6 +73,9 @@ forms:
   motivo_usuario_form:
     required_slots:
       - motivo_usuario
+  criterios_aceitacao_form:
+    required_slots:
+      - criterios_aceitacao
 
 responses:
   utter_saudacao:
@@ -135,11 +151,16 @@ responses:
 
         Digite o motivo do usuário:
 
+  utter_ask_criterios_aceitacao:
+    - text: |
+        Ótimo! Agora vamos definir os critérios de aceitação. Um critério de aceitação é uma condição específica que deve ser atendida para que uma História de Usuário seja considerada completa. Eles ajudam a definir os limites e as expectativas de uma funcionalidade, garantindo que ela atenda aos requisitos do usuário. Os critérios de aceitação são geralmente redigidos de maneira clara e objetiva, e podem incluir aspectos como funcionalidade, desempenho, segurança, e usabilidade. Eles servem como base para testes e validação do que foi implementado.
+
+        Caso você queira definir mais de um critério de aceitação, por favor, separe-os por ponto e vírgula ';'.
+
+        Digite os critérios de aceitação:
+
   utter_confirma_hu:
     - text: |
-        Ótimo! A História de Usuário foi criada com sucesso! 🎉
-        - Como {tipo_usuario}, quero {objetivo_usuario} para que {motivo_usuario}.
-
         Deseja criar outra História de Usuário?
       buttons:
         - title: "Sim"
