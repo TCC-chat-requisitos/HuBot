@@ -33,6 +33,15 @@ rules:
       - action: action_mostra_hu
       - action: utter_confirma_hu
 
+  - rule: ativar avaliação de HU
+    steps:
+      - intent: avaliar_hu
+      - action: action_avaliar_hu
+  - rule: Não fazer nada
+    steps:
+      - intent: nao_avaliar
+      - action: utter_nao_avaliar_hu
+
   # - rule: desativar formulario quando completo
   #   condition:
   #     - active_loop: criar_hu_form

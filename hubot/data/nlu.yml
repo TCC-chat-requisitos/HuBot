@@ -197,3 +197,23 @@ nlu:
     - Você pode listar suas ações
     - Listar ações
     - O que você pode fazer?
+    
+- intent: avaliar_hu
+  examples: |
+    - /avaliar_hu
+
+- intent: nao_avaliar_hu
+  examples: |
+    - /nao_avaliar_hu
+
+- intent: aderir_todas_sugestoes
+  examples: |
+    - /aderir_todas_sugestoes
+    
+- intent: aderir_algumas_sugestoes
+  examples: |
+    - /aderir_algumas_sugestoes
+    
+- intent: nao_aderir_sugestoes
+  examples: |
+    - /nao_aderir_sugestoes

@@ -73,6 +73,16 @@ stories:
   steps:
     - intent: menu_acoes
     - action: utter_menu_acoes
+    
+- story: Avaliar HU
+  steps:
+    - intent: avaliar_hu
+    - action: action_avaliar_hu
+
+- story: Não avaliar HU
+  steps:
+    - intent: nao_avaliar
+    - action: utter_nao_avaliar_hu
 
 # - story: criar_hu
 #   steps:

@@ -2,6 +2,7 @@ version: "3.1"
 
 actions:
   - action_mostra_hu
+  - action_avaliar_hu
 
 intents:
   - saudacao
@@ -19,6 +20,11 @@ intents:
   - perguntar_motivo_hu
   - perguntar_objetivo_hu
   - menu_acoes
+  - avaliar_hu
+  - nao_avaliar_hu
+  - aderir_todas_sugestoes
+  - aderir_algumas_sugestoes
+  - nao_aderir_sugestoes
 
 entities:
   - tipo_usuario
@@ -161,12 +167,39 @@ responses:
 
   utter_confirma_hu:
     - text: |
-        Deseja criar outra História de Usuário?
+        Ótimo! A História de Usuário foi criada com sucesso! 🎉
+        - Como {tipo_usuario}, quero {objetivo_usuario} para que {motivo_usuario}.
+
+        Deseja avaliar a História de Usuário criada? 🤔
       buttons:
         - title: "Sim"
-          payload: "/criar_hu"
+          payload: "/avaliar_hu"
         - title: "Não"
-          payload: "/nao_criar_hu"
+          payload: "/nao_avaliar_hu"
+
+
+  # utter_avaliar_hu:
+  #   - text: |
+  #       Deseja avaliar a História de Usuário criada? 🤔
+  #       - Como {tipo_usuario}, quero {objetivo_usuario} para que {motivo_usuario}.
+
+  #     buttons:
+  #       - title: "Sim"
+  #         payload: "/avaliar_hu"
+  #       - title: "Não"
+  #         payload: "/nao_avaliar_hu"
+
+  utter_nao_avaliar_hu:
+    - text: "Sem problemas! Se precisar de ajuda, estou por aqui! 😉"
+
+  utter_aderir_todas_sugestoes:
+    - text: "Ótimo! Todas as sugestões foram aderidas com sucesso! 🎉"
+  
+  utter_aderir_algumas_sugestoes:
+    - text: "Perfeito! Digite as sugestões que deseja aderir separadas por vírgula. Exemplo: 1, 3, 5"
+
+  utter_nao_aderir_sugestoes:
+    - text: "Sem problemas! As sugestões não foram aderidas. Se precisar de ajuda, estou por aqui! 😉"
   
   utter_explicar_hu:
     - text: |

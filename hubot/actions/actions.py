@@ -1,4 +1,4 @@
-# from actions.cria_hu_action import ActionObterTipoUsuario
+from actions.avalia_hu_action import ActionAvaliarHU
 
 from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
