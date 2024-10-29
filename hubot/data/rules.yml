@@ -58,6 +58,9 @@ rules:
         - requested_slot: items_melhoria
       - active_loop: null
 
+      - action: action_sugestoes_aderidas
+      - action: action_apresenta_hu
+
   # - rule: desativar formulario quando completo
   #   condition:
   #     - active_loop: criar_hu_form

@@ -5,6 +5,8 @@ actions:
   - action_avaliar_hu
   - action_aderir_todas_sugestoes
   - action_aderir_algumas_sugestoes
+  - action_sugestoes_aderidas
+  - action_apresenta_hu
 
 intents:
   - saudacao
