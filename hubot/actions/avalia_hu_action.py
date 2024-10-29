@@ -43,7 +43,7 @@ def obter_melhorias(hu_analise: str) -> List[str]:
             if linha.split(" ")[0] == 'Como':
                 melhorias.append(f'{len(melhorias)+1}. (Titulo): {linha}')
             else:
-                melhorias.append(f'{len(melhorias)+1}. (Criterio de aceiração): {linha[3:]}')
+                melhorias.append(f'{len(melhorias)+1}. (Critério de aceiração Nº {linha[0]}): {linha[3:]}')
 
     return melhorias
 
@@ -146,7 +146,12 @@ class ActionSugestoesAderidas(Action):
     
     def run(self, dispatcher, tracker, domain):
         lista_slots_set = []
-        criterios_aceitacao_aderidos = ""
+        criterios_aceitacao = tracker.get_slot("criterios_aceitacao")
+
+        if criterios_aceitacao:
+            lista_criterios = criterios_aceitacao.split(";")
+        else:
+            lista_criterios = []
 
         hu_analise: str = tracker.get_slot("analise_hu")  # type: ignore
         hu_melhorada, _ = desmebrar_historia_usuario(hu_analise)
@@ -180,14 +185,15 @@ class ActionSugestoesAderidas(Action):
                     hu_melhorada.split(", para ")[1].split(".")[0]
                 ))
             else:
-                criterios_aceitacao_aderidos += melhorias[sugestao-1].split(": ")[1].split(" [")[0] + ";"
+                num_criterio = int(melhorias[sugestao-1].split("Nº ")[1][0])
+                lista_criterios[num_criterio-1] = melhorias[sugestao-1].split(": ")[1].split(" [")[0]
 
             dispatcher.utter_message(text=f"Sugestão '{sugestao}' aderida com sucesso! 🎉")
             dispatcher.utter_message(text=melhorias[sugestao-1])
         
         lista_slots_set.append(SlotSet(
             "criterios_aceitacao", 
-            criterios_aceitacao_aderidos
+            ";".join(lista_criterios)
         ))
 
         return lista_slots_set
