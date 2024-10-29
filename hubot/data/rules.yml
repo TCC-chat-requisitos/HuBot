@@ -42,6 +42,22 @@ rules:
       - intent: nao_avaliar
       - action: utter_nao_avaliar_hu
 
+  - rule: Aderir todas sugestões
+    steps:
+      - intent: aderir_todas_sugestoes
+      - action: action_aderir_todas_sugestoes
+
+  - rule: Aderir algumas sugestões
+    steps:
+      - intent: aderir_algumas_sugestoes
+      - action: action_aderir_algumas_sugestoes
+
+      - action: items_melhoria_form
+      - active_loop: items_melhoria_form
+      - slot_was_set:
+        - requested_slot: items_melhoria
+      - active_loop: null
+
   # - rule: desativar formulario quando completo
   #   condition:
   #     - active_loop: criar_hu_form

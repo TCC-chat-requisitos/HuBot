@@ -11,6 +11,12 @@ nlu:
     - Boa tarde
     - Boa noite
     - E aí
+    - eai
+    - iai
+    - oiiii
+    - oi
+    - ola
+    - oii
 
 - intent: saudacao_tudo_bem
   examples: |
