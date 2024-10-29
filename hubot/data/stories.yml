@@ -84,13 +84,17 @@ stories:
     - intent: nao_avaliar
     - action: utter_nao_avaliar_hu
 
-# - story: criar_hu
+# - story:
 #   steps:
-#     - intent: criar_hu
-#     - action: utter_criar_hu
+#     - intent: aderir_todas_sugestoes
+#     - action: utter_aderir_todas_sugestoes
+  
+# - story:
+#   steps:
+#     - intent: aderir_algumas_sugestoes
+#     - action: utter_aderir_algumas_sugestoes
 
-# - story: coletar_dados_hu
-#   steps:
-#     - intent: criar_hu
-#     - action: criar_hu_form
-#     - active_loop: criar_hu_form
+- story:
+  steps:
+    - intent: nao_aderir_sugestoes
+    - action: utter_nao_aderir_sugestoes

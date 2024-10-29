@@ -3,6 +3,8 @@ version: "3.1"
 actions:
   - action_mostra_hu
   - action_avaliar_hu
+  - action_aderir_todas_sugestoes
+  - action_aderir_algumas_sugestoes
 
 intents:
   - saudacao
@@ -69,19 +71,48 @@ slots:
         - active_loop: criterios_aceitacao_form
           requested_slot: criterios_aceitacao
 
+  analise_hu:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+        conditions:
+        - active_loop: analise_hu_form
+          requested_slot: analise_hu
+
+  items_melhoria:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+        conditions:
+        - active_loop: items_melhoria_form
+          requested_slot: items_melhoria
+
 forms:
   tipo_usuario_form:
     required_slots:
       - tipo_usuario
+
   objetivo_usuario_form:
     required_slots:
       - objetivo_usuario
+
   motivo_usuario_form:
     required_slots:
       - motivo_usuario
+
   criterios_aceitacao_form:
     required_slots:
       - criterios_aceitacao
+
+  analise_hu_form:
+    required_slots:
+      - analise_hu
+
+  items_melhoria_form:
+    required_slots:
+      - items_melhoria
 
 responses:
   utter_saudacao:
@@ -164,6 +195,9 @@ responses:
         Caso você queira definir mais de um critério de aceitação, por favor, separe-os por ponto e vírgula ';'.
 
         Digite os critérios de aceitação:
+
+  utter_ask_items_melhoria:
+    - text: "Digite os números das sugestões que deseja aderir: " 
 
   utter_confirma_hu:
     - text: |
