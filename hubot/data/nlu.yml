@@ -17,6 +17,8 @@ nlu:
     - oi
     - ola
     - oii
+    - /start
+    - start
 
 - intent: saudacao_tudo_bem
   examples: |
