@@ -59,6 +59,17 @@ class ActionAvaliarHU(Action):
         motivo_usuario = tracker.get_slot("motivo_usuario")
         criterios_aceitacao = tracker.get_slot("criterios_aceitacao")
 
+        if not tipo_usuario or not objetivo_usuario or not motivo_usuario:
+            dispatcher.utter_message(text="Ops! Para avaliar uma História de Usuário, você precisa cria-la primeiro.")
+            dispatcher.utter_button_message(
+                text="Deseja criar uma história de usuário?",
+                buttons=[
+                    {"title": "Sim", "payload": "/criar_hu"},
+                    {"title": "Não", "payload": "/nao_criar_hu"},
+                ]
+            )
+            return []
+
         if criterios_aceitacao:
             lista_criterios = criterios_aceitacao.split(";")
             criterios_aceitacao = "\n".join(

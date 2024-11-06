@@ -37,6 +37,7 @@ rules:
     steps:
       - intent: avaliar_hu
       - action: action_avaliar_hu
+
   - rule: Não fazer nada
     steps:
       - intent: nao_avaliar
@@ -60,6 +61,16 @@ rules:
 
       - action: action_sugestoes_aderidas
       - action: action_apresenta_hu
+
+  - rule: Apresentar HU
+    steps:
+      - intent: apresentar_hu
+      - action: action_apresenta_hu
+
+  - rule: Avaliar HU fora do fluxo
+    steps:
+      - intent: avaliar_hu_fora_fluxo
+      - action: action_avaliar_hu
 
   # - rule: desativar formulario quando completo
   #   condition:

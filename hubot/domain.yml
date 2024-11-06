@@ -29,6 +29,7 @@ intents:
   - aderir_todas_sugestoes
   - aderir_algumas_sugestoes
   - nao_aderir_sugestoes
+  - apresentar_hu
 
 entities:
   - tipo_usuario

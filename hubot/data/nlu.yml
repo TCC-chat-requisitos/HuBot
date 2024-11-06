@@ -223,3 +223,47 @@ nlu:
 - intent: nao_aderir_sugestoes
   examples: |
     - /nao_aderir_sugestoes
+
+- intent: apresentar_hu
+  examples: |
+    - /apresentar_hu
+
+- intent: avaliar_hu_fora_fluxo
+  examples: |
+    - quero avaliar uma hu
+    - gostaria de avaliar uma hu
+    - gostaria de avaliar uma história de usuário
+    - gostaria de avaliar uma história
+    - gostaria de avaliar uma hu
+    - gostaria de avaliar uma história de usuário
+    - gostaria de avaliar minha hu
+    - gostaria de avaliar minha história de usuário
+    - gostaria de avaliar minha história
+    - gostaria de melhorar minha hu
+    - gostaria de melhorar minha história de usuário
+    - gostaria de melhorar minha história
+    - sugira melhorias
+    - sugira melhorias na hu
+    - sugira melhorias na história de usuário
+    - sugira melhorias na história
+    - quero que minha hu seja avaliada
+    - quero que minha história de usuário seja avaliada
+    - quero que minha história seja avaliada
+    - quero que minha hu seja melhorada
+    - quero que minha história de usuário seja melhorada
+    - quero que minha história seja melhorada
+    - quero que minha hu seja aprimorada
+    - quero que minha história de usuário seja aprimorada
+    - quero que minha história seja aprimorada
+    - me ajude a avaliar minha hu
+    - me ajude a avaliar minha história de usuário
+    - me ajude a avaliar minha história
+    - me ajude a melhorar uma hu
+    - me ajude a melhorar uma história de usuário
+    - me ajude a melhorar uma história
+    - me ajude a aprimorar uma hu
+    - me ajude a aprimorar uma história de usuário
+    - ajude a aprimorar uma história
+    - me ajude a avaliar uma hu
+    - me ajude a avaliar uma história de usuário
+    - me ajude a avaliar uma história
