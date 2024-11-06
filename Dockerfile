@@ -2,7 +2,7 @@ FROM python:3.8-slim
 
 ADD ./hubot /app
 ADD ./start_services.sh /app
-ADD /hubot/requirements.txt /app
+ADD ./requirements.txt /app
 
 RUN pip install --upgrade pip && \ 
     pip install --progress-bar off -r /app/requirements.txt
