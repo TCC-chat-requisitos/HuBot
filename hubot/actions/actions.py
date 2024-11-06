@@ -1,4 +1,4 @@
-# from actions.cria_hu_action import ActionObterTipoUsuario
+from actions.avalia_hu_action import ActionAvaliarHU, ActionAderirTodasSugestoes, ActionAderirAlgumasSugestoes
 
 from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
@@ -20,7 +20,7 @@ class ActionMostraHU(Action):
         lista_criterios = criterios_aceitacao.split(";") if criterios_aceitacao else []
 
         # Formata os critérios em uma string separada por novas linhas
-        criterios_formatados = "\n".join([f"- {criterio.strip()}" for criterio in lista_criterios])
+        criterios_formatados = "\n".join([f"{i+1}. {criterio.strip()}" for i, criterio in enumerate(lista_criterios)])
 
         # Monta a mensagem final
         mensagem = (

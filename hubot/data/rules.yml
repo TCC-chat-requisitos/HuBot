@@ -33,6 +33,45 @@ rules:
       - action: action_mostra_hu
       - action: utter_confirma_hu
 
+  - rule: ativar avaliação de HU
+    steps:
+      - intent: avaliar_hu
+      - action: action_avaliar_hu
+
+  - rule: Não fazer nada
+    steps:
+      - intent: nao_avaliar
+      - action: utter_nao_avaliar_hu
+
+  - rule: Aderir todas sugestões
+    steps:
+      - intent: aderir_todas_sugestoes
+      - action: action_aderir_todas_sugestoes
+
+  - rule: Aderir algumas sugestões
+    steps:
+      - intent: aderir_algumas_sugestoes
+      - action: action_aderir_algumas_sugestoes
+
+      - action: items_melhoria_form
+      - active_loop: items_melhoria_form
+      - slot_was_set:
+        - requested_slot: items_melhoria
+      - active_loop: null
+
+      - action: action_sugestoes_aderidas
+      - action: action_apresenta_hu
+
+  - rule: Apresentar HU
+    steps:
+      - intent: apresentar_hu
+      - action: action_apresenta_hu
+
+  - rule: Avaliar HU fora do fluxo
+    steps:
+      - intent: avaliar_hu_fora_fluxo
+      - action: action_avaliar_hu
+
   # - rule: desativar formulario quando completo
   #   condition:
   #     - active_loop: criar_hu_form
