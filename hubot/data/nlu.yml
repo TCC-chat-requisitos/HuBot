@@ -11,6 +11,8 @@ nlu:
     - Boa tarde
     - Boa noite
     - E aí
+    - /start
+    - start
 
 - intent: saudacao_tudo_bem
   examples: |

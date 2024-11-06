@@ -1,0 +1,24 @@
+version: '3.0'
+
+services:
+  bot:
+    container_name: bot
+    build: 
+      context: .
+      dockerfile: ./bot.Dockerfile
+    restart: unless-stopped
+    user: root
+    ports:
+      - 5005:5005
+    env_file: 
+      - ./.env
+    depends_on: 
+      - actions
+  
+  actions:
+    container_name: actions
+    build: 
+      context: .
+      dockerfile: ./actions.Dockerfile
+    ports:
+      - 5055:5055
