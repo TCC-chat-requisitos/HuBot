@@ -1,4 +1,4 @@
-FROM python:3.8
+FROM python:3.8-slim
 
 ADD ./hubot /app
 ADD ./start_services.sh /app
