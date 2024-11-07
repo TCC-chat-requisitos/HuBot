@@ -4,4 +4,4 @@ cd hubot/
 rasa run actions --actions actions &
 
 # Iniciar o servidor principal do RASA
-rasa run --model models --enable-api --cors "*"
+rasa run --model models --enable-api --cors "*" --p $PORT
