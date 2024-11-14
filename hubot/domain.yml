@@ -242,13 +242,15 @@ responses:
 
   utter_ask_objetivo_usuario:
     - text: |
-        Boaa! Agora vamos definir o objetivo do usuário. O objetivo é o que o usuário deseja alcançar ao interagir com o sistema. Exemplo: quero acessar meu extrato bancário.
+        Boaa! Agora vamos definir o objetivo do usuário. O objetivo é o que o usuário deseja alcançar ao interagir com o sistema. 
+        Exemplo: quero acessar meu extrato bancário.
 
         Digite o objetivo do usuário:
 
   utter_ask_motivo_usuario:
     - text: |
-        Agora vamos definir o motivo do usuário. O motivo é a razão pela qual o usuário deseja alcançar o objetivo. Exemplos: monitorar, gerenciar, controlar, ou até mesmo frases mais complexas como: "para poder monitorar minhas transações financeiras a qualquer momento.".
+        Agora vamos definir o motivo do usuário. O motivo é a razão pela qual o usuário deseja alcançar o objetivo. 
+        Exemplos: monitorar minhas transações financeiras a qualquer momento."
 
         Digite o motivo do usuário:
 
@@ -263,18 +265,17 @@ responses:
   utter_ask_items_melhoria:
     - text: "Digite os números das sugestões que deseja aderir: " 
 
-  utter_confirma_hu:
-    - text: |
-        Ótimo! A História de Usuário foi criada com sucesso! 🎉
-        - Como {tipo_usuario}, quero {objetivo_usuario} para que {motivo_usuario}.
+  # utter_confirma_hu:
+  #   - text: |
+  #       Ótimo! A História de Usuário foi criada com sucesso! 🎉
+  #       - Como {tipo_usuario}, quero {objetivo_usuario} para que {motivo_usuario}.
 
-        Deseja avaliar a História de Usuário criada? 🤔
-      buttons:
-        - title: "Sim"
-          payload: "/avaliar_hu"
-        - title: "Não"
-          payload: "/nao_avaliar_hu"
-
+  #       Deseja avaliar a História de Usuário criada? 🤔
+  #     buttons:
+  #       - title: "Sim"
+  #         payload: "/avaliar_hu"
+  #       - title: "Não"
+  #         payload: "/nao_avaliar_hu"
 
   # utter_avaliar_hu:
   #   - text: |

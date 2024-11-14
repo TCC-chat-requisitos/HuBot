@@ -24,14 +24,21 @@ class ActionMostraHU(Action):
 
         # Monta a mensagem final
         mensagem = (
-            f"Ótimo! A História de Usuário foi criada com sucesso! 🎉\n"
+            f"Ótimo! A História de Usuário foi criada com sucesso! 🎉\n\n"
             f"- Como {tipo_usuario}, quero {objetivo_usuario} para que {motivo_usuario}.\n\n"
             f"Critérios de aceitação:\n"
-            f"{criterios_formatados}\n\n"
-            "Deseja criar outra História de Usuário?"
+            f"{criterios_formatados}"
         )
 
         # Envia a mensagem para o usuário
-        dispatcher.utter_message(text=mensagem)
+        dispatcher.utter_message(text=mensagem, parse_mode="MarkdownV2")
+        dispatcher.utter_message(text="Deseja avaliar a História de Usuário criada? 🤔")
+        dispatcher.utter_button_message(
+            text="Deseja criar uma história de usuário?",
+            buttons=[
+                {"title": "Sim", "payload": "/avaliar_hu"},
+                {"title": "Não", "payload": "/nao_avaliar_hu"},
+            ]
+        )
 
         return []
