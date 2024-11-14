@@ -92,6 +92,43 @@ slots:
         - active_loop: items_melhoria_form
           requested_slot: items_melhoria
 
+  tipo_usuario_anterior:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+        conditions:
+        - active_loop: tipo_usuario_anterior_form
+          requested_slot: tipo_usuario_anterior
+
+  objetivo_usuario_anterior:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+        conditions:
+        - active_loop: objetivo_usuario_anterior_form
+          requested_slot: objetivo_usuario_anterior
+
+  motivo_usuario_anterior:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+        conditions:
+        - active_loop: motivo_usuario_anterior_form
+          requested_slot: motivo_usuario_anterior
+
+  criterios_aceitacao_anterior:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+        conditions:
+        - active_loop: criterios_aceitacao_anterior_form
+          requested_slot: criterios_aceitacao_anterior
+
+
 forms:
   tipo_usuario_form:
     required_slots:
@@ -116,6 +153,22 @@ forms:
   items_melhoria_form:
     required_slots:
       - items_melhoria
+
+  tipo_usuario_anterior_form:
+    required_slots:
+      - tipo_usuario_anterior
+
+  objetivo_usuario_anterior_form:
+    required_slots:
+      - objetivo_usuario_anterior
+
+  motivo_usuario_anterior_form:
+    required_slots:
+      - motivo_usuario_anterior
+
+  criterios_aceitacao_anterior_form:
+    required_slots:
+      - criterios_aceitacao_anterior
 
 responses:
   utter_saudacao:

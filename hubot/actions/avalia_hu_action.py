@@ -59,6 +59,32 @@ class ActionAvaliarHU(Action):
         motivo_usuario = tracker.get_slot("motivo_usuario")
         criterios_aceitacao = tracker.get_slot("criterios_aceitacao")
 
+        tipo_usuario_anterior = tracker.get_slot("tipo_usuario_anterior")
+        objetivo_usuario_anterior = tracker.get_slot("objetivo_usuario_anterior")
+        motivo_usuario_anterior = tracker.get_slot("motivo_usuario_anterior")
+        criterios_aceitacao_anterior = tracker.get_slot("criterios_aceitacao_anterior")
+
+        if not tipo_usuario or not objetivo_usuario or not motivo_usuario:
+            if (
+                not tipo_usuario_anterior or 
+                not objetivo_usuario_anterior or 
+                not motivo_usuario_anterior
+            ):
+                dispatcher.utter_message(text="Ops! Para avaliar uma História de Usuário, você precisa cria-la primeiro.")
+                dispatcher.utter_button_message(
+                    text="Deseja criar uma história de usuário?",
+                    buttons=[
+                        {"title": "Sim", "payload": "/criar_hu"},
+                        {"title": "Não", "payload": "/nao_criar_hu"},
+                    ]
+                )
+                return []
+            else:
+                tipo_usuario = tipo_usuario_anterior
+                objetivo_usuario = objetivo_usuario_anterior
+                motivo_usuario = motivo_usuario_anterior
+                criterios_aceitacao = criterios_aceitacao_anterior
+
         if not tipo_usuario or not objetivo_usuario or not motivo_usuario:
             dispatcher.utter_message(text="Ops! Para avaliar uma História de Usuário, você precisa cria-la primeiro.")
             dispatcher.utter_button_message(
@@ -113,20 +139,21 @@ class ActionAderirTodasSugestoes(Action):
 
         return [
             SlotSet(
-                "tipo_usuario", hu_melhorada.split(",")[0].split(" ")[1]
+                "tipo_usuario_anterior", hu_melhorada.split(",")[0].split(" ")[1]
             ),
             SlotSet(
-                "objetivo_usuario", 
+                "objetivo_usuario_anterior", 
                 hu_melhorada.split(", quero ")[1].split(", para")[0]
             ),
             SlotSet(
-                "motivo_usuario", 
+                "motivo_usuario_anterior", 
                 hu_melhorada.split(", para ")[1].split(".")[0]
             ),
             SlotSet(
-                "criterios_aceitacao", 
+                "criterios_aceitacao_anterior", 
                 ";".join(criterios_aceitacao_melhorados)
-            )
+            ),
+
         ]
 
 
@@ -184,14 +211,14 @@ class ActionSugestoesAderidas(Action):
 
             if sugestao == 1 and "(Titulo)" in melhorias[0]:
                 lista_slots_set.append(SlotSet(
-                "tipo_usuario", hu_melhorada.split(",")[0].split(" ")[1]
+                "tipo_usuario_anterior", hu_melhorada.split(",")[0].split(" ")[1]
                 ))
                 lista_slots_set.append(SlotSet(
-                    "objetivo_usuario", 
+                    "objetivo_usuario_anterior", 
                     hu_melhorada.split(", quero ")[1].split(", para")[0]
                 ))
                 lista_slots_set.append(SlotSet(
-                    "motivo_usuario", 
+                    "motivo_usuario_anterior", 
                     hu_melhorada.split(", para ")[1].split(".")[0]
                 ))
             else:
@@ -202,9 +229,10 @@ class ActionSugestoesAderidas(Action):
             dispatcher.utter_message(text=melhorias[sugestao-1])
         
         lista_slots_set.append(SlotSet(
-            "criterios_aceitacao", 
+            "criterios_aceitacao_anterior", 
             ";".join(lista_criterios)
         ))
+
 
         return lista_slots_set
 
@@ -214,10 +242,10 @@ class ActionApresentaHU(Action):
         return "action_apresenta_hu"
 
     def run(self, dispatcher, tracker, domain):
-        tipo_usuario = tracker.get_slot("tipo_usuario")
-        objetivo_usuario = tracker.get_slot("objetivo_usuario")
-        motivo_usuario = tracker.get_slot("motivo_usuario")
-        criterios_aceitacao = tracker.get_slot("criterios_aceitacao")
+        tipo_usuario = tracker.get_slot("tipo_usuario_anterior")
+        objetivo_usuario = tracker.get_slot("objetivo_usuario_anterior")
+        motivo_usuario = tracker.get_slot("motivo_usuario_anterior")
+        criterios_aceitacao = tracker.get_slot("criterios_aceitacao_anterior")
 
         lista_criterios = criterios_aceitacao.split(";") if criterios_aceitacao else None
 
@@ -227,7 +255,13 @@ class ActionApresentaHU(Action):
             criterios_formatados = "\n".join([f"{i+1}. {criterio.strip().capitalize()}" for i, criterio in enumerate(lista_criterios)])
 
         dispatcher.utter_message(
-            text=f"# Historia de Usuário\n\n## Título\nComo {tipo_usuario}, quero {objetivo_usuario}, para {motivo_usuario}\n\n## Critério(s) de Aceitação\n{criterios_formatados}"
+            text=(
+                f"# Historia de Usuário\n"
+                f"## Título\n"
+                f"Como {tipo_usuario}, quero {objetivo_usuario}, para {motivo_usuario}\n"
+                f"## Critério(s) de Aceitação\n{criterios_formatados}"
+            ),
+            parse_mode="MarkdownV2"
         )
-
+        
         return []

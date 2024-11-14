@@ -47,6 +47,7 @@ rules:
     steps:
       - intent: aderir_todas_sugestoes
       - action: action_aderir_todas_sugestoes
+      - action: action_apresenta_hu
 
   - rule: Aderir algumas sugestões
     steps:
