@@ -302,9 +302,9 @@ class ActionApresentaHU(Action):
 
         dispatcher.utter_message(
             text=(
-                f"# Historia de Usuário\n\n"
+                f"História de Usuário:\n\n"
                 f"## Título\n"
-                f"Como {tipo_usuario}, quero {objetivo_usuario}, para {motivo_usuario}\n\n"
+                f"Como {tipo_usuario}, quero {objetivo_usuario}, para {motivo_usuario}\n"
                 f"## Critério(s) de Aceitação\n{criterios_formatados}"
             ),
             parse_mode="MarkdownV2"

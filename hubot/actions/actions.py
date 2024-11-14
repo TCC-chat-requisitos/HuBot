@@ -32,9 +32,9 @@ class ActionMostraHU(Action):
 
         # Envia a mensagem para o usuário
         dispatcher.utter_message(text=mensagem, parse_mode="MarkdownV2")
-        dispatcher.utter_message(text="Deseja avaliar a História de Usuário criada? 🤔")
+
         dispatcher.utter_button_message(
-            text="Deseja criar uma história de usuário?",
+            text="Deseja avaliar a História de Usuário criada? 🤔",
             buttons=[
                 {"title": "Sim", "payload": "/avaliar_hu"},
                 {"title": "Não", "payload": "/nao_avaliar_hu"},
