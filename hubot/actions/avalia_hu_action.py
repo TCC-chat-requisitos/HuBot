@@ -48,6 +48,29 @@ def obter_melhorias(hu_analise: str) -> List[str]:
     return melhorias
 
 
+class ActionNaoAvaliarHU(Action):
+    def name(self):
+        return "action_nao_avaliar_hu"
+
+    def run(self, dispatcher, tracker, domain):
+        tipo_usuario = tracker.get_slot("tipo_usuario")
+        objetivo_usuario = tracker.get_slot("objetivo_usuario")
+        motivo_usuario = tracker.get_slot("motivo_usuario")
+        criterios_aceitacao = tracker.get_slot("criterios_aceitacao")
+
+        dispatcher.utter_message(text="Sem problemas! Se precisar de ajuda, ou desejar avaliar essa HU depois, estou por aqui! 😉")
+        return [
+            SlotSet("tipo_usuario_anterior", tipo_usuario), 
+            SlotSet("objetivo_usuario_anterior", objetivo_usuario), 
+            SlotSet("motivo_usuario_anterior", motivo_usuario), 
+            SlotSet("criterios_aceitacao_anterior", criterios_aceitacao),
+            SlotSet("tipo_usuario", None), 
+            SlotSet("objetivo_usuario", None), 
+            SlotSet("motivo_usuario", None), 
+            SlotSet("criterios_aceitacao", None)
+        ]
+
+
 class ActionAvaliarHU(Action):
     def name(self):
         return "action_avaliar_hu"
@@ -84,17 +107,6 @@ class ActionAvaliarHU(Action):
                 objetivo_usuario = objetivo_usuario_anterior
                 motivo_usuario = motivo_usuario_anterior
                 criterios_aceitacao = criterios_aceitacao_anterior
-
-        if not tipo_usuario or not objetivo_usuario or not motivo_usuario:
-            dispatcher.utter_message(text="Ops! Para avaliar uma História de Usuário, você precisa cria-la primeiro.")
-            dispatcher.utter_button_message(
-                text="Deseja criar uma história de usuário?",
-                buttons=[
-                    {"title": "Sim", "payload": "/criar_hu"},
-                    {"title": "Não", "payload": "/nao_criar_hu"},
-                ]
-            )
-            return []
 
         if criterios_aceitacao:
             lista_criterios = criterios_aceitacao.split(";")

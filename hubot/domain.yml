@@ -7,6 +7,8 @@ actions:
   - action_aderir_algumas_sugestoes
   - action_sugestoes_aderidas
   - action_apresenta_hu
+  - action_nao_avaliar_hu
+  - action_nao_aderir_sugestoes
 
 intents:
   - saudacao
@@ -222,7 +224,13 @@ responses:
   utter_criar_hu:
     - text: |
         Ótimo! Vamos criar uma História de Usuário juntos! 🚀
-        Primeiro vamos definir o tipo de usuário. Um tipo de usuário é uma descrição de um papel ou perfil de usuário que interage com o sistema. Exemplos: cliente, administrador, visitante, etc.
+        Lembrando que vamos seguir o padrão:
+        - Como [tipo de usuário], quero [objetivo] para que [motivo].
+
+        Por exemplo: 
+        - Como cliente de um banco online, quero acessar meu extrato bancário de forma rápida e segura pelo aplicativo móvel, para poder monitorar minhas transações financeiras a qualquer momento.
+
+        Primeiro vamos definir o tipo de usuário. Exemplos: cliente, administrador, visitante, etc.
 
         Digite o tipo de usuário:
 
@@ -234,19 +242,19 @@ responses:
 
   utter_ask_objetivo_usuario:
     - text: |
-        Perfeito! Agora vamos definir o objetivo do usuário. O objetivo é o que o usuário deseja alcançar ao interagir com o sistema. Exemplos: acessar, visualizar, editar, excluir, ou até mesmo frases mais complexas como: "quero acessar meu extrato bancário de forma rápida e segura pelo aplicativo móvel".
+        Boaa! Agora vamos definir o objetivo do usuário. O objetivo é o que o usuário deseja alcançar ao interagir com o sistema. Exemplo: quero acessar meu extrato bancário.
 
         Digite o objetivo do usuário:
 
   utter_ask_motivo_usuario:
     - text: |
-        Excelente! Agora vamos definir o motivo do usuário. O motivo é a razão pela qual o usuário deseja alcançar o objetivo. Exemplos: monitorar, gerenciar, controlar, ou até mesmo frases mais complexas como: "para poder monitorar minhas transações financeiras a qualquer momento.".
+        Agora vamos definir o motivo do usuário. O motivo é a razão pela qual o usuário deseja alcançar o objetivo. Exemplos: monitorar, gerenciar, controlar, ou até mesmo frases mais complexas como: "para poder monitorar minhas transações financeiras a qualquer momento.".
 
         Digite o motivo do usuário:
 
   utter_ask_criterios_aceitacao:
     - text: |
-        Ótimo! Agora vamos definir os critérios de aceitação. Um critério de aceitação é uma condição específica que deve ser atendida para que uma História de Usuário seja considerada completa. Eles ajudam a definir os limites e as expectativas de uma funcionalidade, garantindo que ela atenda aos requisitos do usuário. Os critérios de aceitação são geralmente redigidos de maneira clara e objetiva, e podem incluir aspectos como funcionalidade, desempenho, segurança, e usabilidade. Eles servem como base para testes e validação do que foi implementado.
+        Ótimo! Agora vamos definir os critérios de aceitação. Um critério de aceitação é uma condição específica que deve ser atendida para que uma História de Usuário seja considerada completa. Eles ajudam a definir os limites e as expectativas de uma funcionalidade, garantindo que ela atenda aos requisitos do usuário.
 
         Caso você queira definir mais de um critério de aceitação, por favor, separe-os por ponto e vírgula ';'.
 
@@ -279,17 +287,14 @@ responses:
   #       - title: "Não"
   #         payload: "/nao_avaliar_hu"
 
-  utter_nao_avaliar_hu:
-    - text: "Sem problemas! Se precisar de ajuda, estou por aqui! 😉"
+  # utter_nao_avaliar_hu:
+  #   - text: "Sem problemas! Se precisar de ajuda, estou por aqui! 😉"
 
   utter_aderir_todas_sugestoes:
     - text: "Ótimo! Todas as sugestões foram aderidas com sucesso! 🎉"
   
   utter_aderir_algumas_sugestoes:
     - text: "Perfeito! Digite as sugestões que deseja aderir separadas por vírgula. Exemplo: 1, 3, 5"
-
-  utter_nao_aderir_sugestoes:
-    - text: "Sem problemas! As sugestões não foram aderidas. Se precisar de ajuda, estou por aqui! 😉"
   
   utter_explicar_hu:
     - text: |
@@ -372,6 +377,9 @@ responses:
           payload: 'O que é o motivo de uma História de Usuário?'
         - title: "Objetivo de uma HU"
           payload: 'O que é o objetivo de uma História de Usuário?'
+
+  utter_hu_sendo_analisada:
+    - text: "Por favor, aguarde um momento... A História de Usuário está sendo analisada. ⏳"
 
 session_config:
   session_expiration_time: 60

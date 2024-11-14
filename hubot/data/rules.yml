@@ -36,12 +36,24 @@ rules:
   - rule: ativar avaliação de HU
     steps:
       - intent: avaliar_hu
+      - action: utter_hu_sendo_analisada
       - action: action_avaliar_hu
 
-  - rule: Não fazer nada
+  - rule: Não avaliar HU
     steps:
-      - intent: nao_avaliar
-      - action: utter_nao_avaliar_hu
+      - intent: nao_avaliar_hu
+      - action: action_nao_avaliar_hu
+
+  - rule: Avaliar HU
+    steps:
+      - intent: avaliar_hu
+      - action: utter_hu_sendo_analisada
+      - action: action_avaliar_hu
+
+  - rule: Não aderir sugestões
+    steps:
+      - intent: nao_aderir_sugestoes
+      - action: action_nao_aderir_sugestoes
 
   - rule: Aderir todas sugestões
     steps:
@@ -71,6 +83,7 @@ rules:
   - rule: Avaliar HU fora do fluxo
     steps:
       - intent: avaliar_hu_fora_fluxo
+      - action: utter_hu_sendo_analisada
       - action: action_avaliar_hu
 
   # - rule: desativar formulario quando completo
