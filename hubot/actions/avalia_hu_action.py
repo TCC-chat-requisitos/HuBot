@@ -153,7 +153,36 @@ class ActionAderirTodasSugestoes(Action):
                 "criterios_aceitacao_anterior", 
                 ";".join(criterios_aceitacao_melhorados)
             ),
+            SlotSet("tipo_usuario", None), 
+            SlotSet("objetivo_usuario", None), 
+            SlotSet("motivo_usuario", None), 
+            SlotSet("criterios_aceitacao", None)
+        ]
 
+
+class ActionNaoAderirSugestoes(Action):
+    def name(self):
+        return "action_nao_aderir_sugestoes"
+
+    def run(self, dispatcher, tracker, domain):
+        tipo_usuario = tracker.get_slot("tipo_usuario")
+        objetivo_usuario = tracker.get_slot("objetivo_usuario")
+        motivo_usuario = tracker.get_slot("motivo_usuario")
+        criterios_aceitacao = tracker.get_slot("criterios_aceitacao")
+
+        dispatcher.utter_message(
+            text="Sem problemas! As sugestões não foram aderidas. Se precisar de ajuda, estou por aqui! 😉"
+        )
+
+        return [
+            SlotSet("tipo_usuario_anterior", tipo_usuario), 
+            SlotSet("objetivo_usuario_anterior", objetivo_usuario), 
+            SlotSet("motivo_usuario_anterior", motivo_usuario), 
+            SlotSet("criterios_aceitacao_anterior", criterios_aceitacao),
+            SlotSet("tipo_usuario", None), 
+            SlotSet("objetivo_usuario", None), 
+            SlotSet("motivo_usuario", None), 
+            SlotSet("criterios_aceitacao", None)
         ]
 
 
@@ -232,7 +261,12 @@ class ActionSugestoesAderidas(Action):
             "criterios_aceitacao_anterior", 
             ";".join(lista_criterios)
         ))
-
+        lista_slots_set = lista_slots_set + [
+            SlotSet("tipo_usuario", None), 
+            SlotSet("objetivo_usuario", None), 
+            SlotSet("motivo_usuario", None), 
+            SlotSet("criterios_aceitacao", None)
+        ]
 
         return lista_slots_set
 
