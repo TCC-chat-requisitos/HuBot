@@ -144,7 +144,6 @@ class ActionAderirAlgumasSugestoes(Action):
         hu_analise: str = tracker.get_slot("analise_hu")  # type: ignore
         melhorias = obter_melhorias(hu_analise)
 
-        dispatcher.utter_message(text="\n")
         dispatcher.utter_message(text="Melhorias possíveis:")
         dispatcher.utter_message(text="\n".join(melhorias))
 
