@@ -139,7 +139,6 @@ class ActionAderirTodasSugestoes(Action):
         return "action_aderir_todas_sugestoes"
     
     def run(self, dispatcher, tracker, domain):
-
         hu_analise = tracker.get_slot("analise_hu")
         hu_melhorada, criterios_aceitacao_melhorados = desmebrar_historia_usuario(
             hu_analise  # type: ignore
@@ -233,7 +232,6 @@ class ActionSugestoesAderidas(Action):
 
         hu_analise: str = tracker.get_slot("analise_hu")  # type: ignore
         hu_melhorada, _ = desmebrar_historia_usuario(hu_analise)
-
         melhorias = obter_melhorias(hu_analise)
         sugestoes_aderidas = tracker.get_slot("items_melhoria")
 
@@ -277,7 +275,8 @@ class ActionSugestoesAderidas(Action):
             SlotSet("tipo_usuario", None), 
             SlotSet("objetivo_usuario", None), 
             SlotSet("motivo_usuario", None), 
-            SlotSet("criterios_aceitacao", None)
+            SlotSet("criterios_aceitacao", None),
+            SlotSet("items_melhoria", None)
         ]
 
         return lista_slots_set
