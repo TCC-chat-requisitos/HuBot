@@ -132,6 +132,11 @@ nlu:
     - qr fazer uma HU
     - qr fazer uma história
     - qr criar uma HU
+    - quero criar uma nova hu
+    - quero criar uma nova história de usuário
+    - quero criar uma nova história
+    - quero fazer uma nova história de usuário
+    - quero fazer uma nova HU
 
 - intent: nao_criar_hu
   examples: |
