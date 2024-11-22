@@ -3,6 +3,7 @@ from actions.avalia_hu_action import ActionAvaliarHU, ActionAderirTodasSugestoes
 from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
+from rasa_sdk.events import SlotSet
 
 class ActionMostraHU(Action):
 
@@ -42,3 +43,60 @@ class ActionMostraHU(Action):
         )
 
         return []
+
+
+class ActionFormadaHU(Action):
+
+    def name(self) -> Text:
+        return "action_formada_hu"
+    
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        campos_formados = []
+
+        tipo_usuario = tracker.get_slot("tipo_usuario")
+        objetivo_usuario = tracker.get_slot("objetivo_usuario")
+        motivo_usuario = tracker.get_slot("motivo_usuario")
+        criterios_aceitacao = tracker.get_slot("criterios_aceitacao")
+
+        if criterios_aceitacao:
+            if criterios_aceitacao[-1] == ";":
+                criterios_aceitacao = criterios_aceitacao[:-1]
+            
+            lista_criterios_aceitacao = criterios_aceitacao.split(";")
+            lista_criterios_aceitacao = [criterio.capitalize() for criterio in lista_criterios_aceitacao]
+            criterios_aceitacao = ";".join(lista_criterios_aceitacao)
+
+            campos_formados.append(SlotSet("criterios_aceitacao", criterios_aceitacao))
+        
+        if tipo_usuario:
+            campos_formados.append(
+                SlotSet("tipo_usuario", tipo_usuario.lower())
+            )
+        else:
+            campos_formados.append(
+                SlotSet("tipo_usuario", "usuário")
+            )
+        
+        if objetivo_usuario:
+            campos_formados.append(
+                SlotSet("objetivo_usuario", objetivo_usuario.lower())
+            )
+        else:
+            campos_formados.append(
+                SlotSet(
+                    "objetivo_usuario", "'objetivo do usuário não informado'"
+                )
+            )
+        
+        if motivo_usuario:
+            campos_formados.append(
+                SlotSet("motivo_usuario", motivo_usuario.lower())
+            )
+        else:
+            campos_formados.append(
+                SlotSet(
+                    "motivo_usuario", "'motivo do usuário não informado'"
+                )
+            )
+
+        return campos_formados

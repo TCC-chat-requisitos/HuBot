@@ -30,6 +30,7 @@ rules:
         - requested_slot: criterios_aceitacao
       - active_loop: null
 
+      - action: action_formada_hu
       - action: action_mostra_hu
       # - action: utter_confirma_hu
 

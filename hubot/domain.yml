@@ -9,6 +9,7 @@ actions:
   - action_apresenta_hu
   - action_nao_avaliar_hu
   - action_nao_aderir_sugestoes
+  - action_formada_hu
 
 intents:
   - saudacao
