@@ -34,9 +34,7 @@ class APIOpenAI:
 Análise a história de usuário a seguir, lembrando que ela deve estar no seguinte padrão:
 Como <persona>, quero <objetivo desejado>, para que <valor a ser alcançado>.
 
-O padrão deve ser seguido para que a análise seja feita corretamente, não altere a estrutura do padrão, não retire vírgulas ou pontos finais impostos no padrão, apenas faça correções gramaticais e de concordância.
-
-Verifique se a gramática está correta e se há possíveis incongruências nos locais de preenchimento da história de usuário. Caso encontre correções ou incongruências, recomende melhorias ou correções. Analise cada critério de aceitação e verifique se há possibilidade de melhoria ou correção. Se houver, sugira as correções necessárias, mencionando claramente o número do critério.
+O padrão deve ser seguido para que a análise seja feita corretamente, não altere a estrutura do padrão, não retire vírgulas ou pontos finais impostos no padrão . Verifique se a gramática e a concordância está correta e se há possíveis incongruências nos locais de preenchimento da história de usuário. Caso encontre correções ou incongruências, recomende melhorias e/ou correções. Analise cada critério de aceitação e verifique se há possibilidade de melhoria ou correção. Se houver, sugira as correções necessárias, mencionando claramente o número do critério.
 
 Exemplo de historia a ser analisada:
 
