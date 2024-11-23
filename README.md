@@ -51,7 +51,7 @@
 
      OU
      
-     Caso queira interagir com o HuBot diretamente no terminal:
+   - Caso queira interagir com o HuBot diretamente no terminal:
     ```bash
     rasa shell
     ```
