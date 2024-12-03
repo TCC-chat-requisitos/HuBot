@@ -379,6 +379,7 @@ responses:
           payload: 'O que é o motivo de uma História de Usuário?'
         - title: "Objetivo de uma HU"
           payload: 'O que é o objetivo de uma História de Usuário?'
+      button_type: 'vertical'
 
   utter_hu_sendo_analisada:
     - text: "Por favor, aguarde um momento... A História de Usuário está sendo analisada. ⏳"
