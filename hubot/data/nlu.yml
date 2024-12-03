@@ -217,6 +217,27 @@ nlu:
     - Você pode listar suas ações
     - Listar ações
     - O que você pode fazer?
+    - tem um menu de ações?
+    - tem um menu?
+    - tem um menu de opções?
+    - tem um menu de ações?
+    - Abrir menu
+    - Abra o menu
+    - Mostrar menu
+    - Mostrar opções
+    - Mostrar ações
+    - Mostrar o que você pode fazer
+    - Mostrar o que você sabe fazer
+    - Mostrar o que você é capaz de fazer
+    - Mostrar o que você pode me ajudar
+    - Mostrar o que você pode me ajudar a fazer
+    - Mostrar o que você pode me ajudar a resolver
+    - Mostrar o que você pode me ajudar a solucionar
+    - Mostrar o que você pode me ajudar a desenvolver
+    - possui um menu?
+    - possui um menu de ações?
+    - possui menu?
+    - possui menu de ações?
     
 - intent: avaliar_hu
   examples: |
