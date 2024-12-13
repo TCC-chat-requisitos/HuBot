@@ -2,6 +2,11 @@ version: "3.1"
 
 stories:
 
+- story: contato_inicial
+  steps:
+    - intent: contato_inicial
+    - action: utter_contato_inicial
+
 - story: saudação
   steps:
     - intent: saudacao

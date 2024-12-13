@@ -174,6 +174,16 @@ forms:
       - criterios_aceitacao_anterior
 
 responses:
+  utter_contato_inicial:
+    - text: |
+        Eu sou o Hubot, um chatbot desenvolvido para ajudar você a entender um pouco mais sobre Histórias de Usuário, além disso posso te ajudar a criar histórias de usuário e avaliá-las 😃
+        Alguns exemplos de perguntas que posso responder são:
+          - O que é uma História de Usuário?
+          - Qual é um bom exemplo de História de Usuário?
+          - Quero criar uma história de usuário, pode me ajudar?
+        Para visualizar todas as ações que posso realizar digite: 'menu'
+
+
   utter_saudacao:
     - text: "Oiie, Hubot na área! Como posso te ajudar? 😃"
     - text: "Olá! Como posso ajudar você?"
